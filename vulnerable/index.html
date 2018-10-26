@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Vulnerable Search Screen</h1>
+
+    <form>
+      Search term:
+      <input type="text" class="form-control" name="q">
+      <br>
+      <input type="submit" class="btn btn-primary" value="Search">
+    </form>
+
+    <div id="searchResults" hidden="true">
+      <h3>Results:</h3>
+      <div id="searchResultsContent"></div>
+    </div>
+  </div>
+
+  <script>
+    const searchParams = new URLSearchParams(window.location.search);
+    const q = searchParams.get('q');
+
+    if (q) {
+      document.getElementById('searchResults').hidden = false;
+      document.getElementById('searchResultsContent').innerHTML = q;
+    }
+  </script>
+
+</body>
+
+</html>

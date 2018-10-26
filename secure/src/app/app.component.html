@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Secure Search Screen</h1>
+
+  <form (ngSubmit)="search()">
+    Search term:
+    <input type="text" class="form-control" name="searchBoxText" [(ngModel)]="searchBoxText">
+    <br>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <div *ngIf="q">
+    <h3>Results:</h3>
+    {{q}}
+  </div>
+</div>
